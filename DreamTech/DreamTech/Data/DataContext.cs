@@ -10,11 +10,6 @@ namespace DreamTech.Data
 
         }
 
-        public DbSet<Product>products {get; set;}
-        public DbSet<Customer> customers { get; set;}   
-        public DbSet<Sealer> sealers { get; set;}
-        public DbSet<Employee> employees { get; set;}
-        public DbSet<User> users  { get; set;}
 
 
         
