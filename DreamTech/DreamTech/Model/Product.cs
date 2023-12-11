@@ -1,4 +1,6 @@
-﻿namespace DreamTech.Model
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace DreamTech.Model
 {
     public class Product
     {
@@ -8,5 +10,6 @@
         public string? ProductCode { get; set; }
         public double? Price { get; set; }
         public ICollection<Sealer>? Sealer { get; set; }
+        public int SealerID { get; set; }   
     }
 }

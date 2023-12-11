@@ -1,4 +1,6 @@
-﻿namespace DreamTech.Model
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace DreamTech.Model
 {
     public class User
     {
@@ -7,6 +9,6 @@
         public string? UserEmail { get; set; }
         public string? UserPassword { get; set; }
         public Sealer? Sealer { get; set; }
-
+        public int SealerID { get; set; }
     }
 }
