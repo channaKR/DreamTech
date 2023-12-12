@@ -53,7 +53,10 @@ namespace DreamTech.Migrations
             modelBuilder.Entity("DreamTech.Model.Sealer", b =>
                 {
                     b.Property<int>("SealerId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SealerId"));
 
                     b.Property<string>("SealerCode")
                         .HasColumnType("nvarchar(max)");
@@ -91,6 +94,9 @@ namespace DreamTech.Migrations
 
                     b.HasKey("UserId");
 
+                    b.HasIndex("SealerID")
+                        .IsUnique();
+
                     b.ToTable("users");
                 });
 
@@ -109,15 +115,15 @@ namespace DreamTech.Migrations
                     b.ToTable("ProductSealer");
                 });
 
-            modelBuilder.Entity("DreamTech.Model.Sealer", b =>
+            modelBuilder.Entity("DreamTech.Model.User", b =>
                 {
-                    b.HasOne("DreamTech.Model.User", "User")
-                        .WithOne("Sealer")
-                        .HasForeignKey("DreamTech.Model.Sealer", "SealerId")
+                    b.HasOne("DreamTech.Model.Sealer", "Sealer")
+                        .WithOne("User")
+                        .HasForeignKey("DreamTech.Model.User", "SealerID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("User");
+                    b.Navigation("Sealer");
                 });
 
             modelBuilder.Entity("ProductSealer", b =>
@@ -135,9 +141,9 @@ namespace DreamTech.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("DreamTech.Model.User", b =>
+            modelBuilder.Entity("DreamTech.Model.Sealer", b =>
                 {
-                    b.Navigation("Sealer");
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

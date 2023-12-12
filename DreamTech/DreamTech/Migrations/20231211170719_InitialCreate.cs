@@ -28,26 +28,11 @@ namespace DreamTech.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "users",
-                columns: table => new
-                {
-                    UserId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserPassword = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SealerID = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_users", x => x.UserId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "sealers",
                 columns: table => new
                 {
-                    SealerId = table.Column<int>(type: "int", nullable: false),
+                    SealerId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     SealerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SealerNic = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SealerCode = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -55,12 +40,6 @@ namespace DreamTech.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_sealers", x => x.SealerId);
-                    table.ForeignKey(
-                        name: "FK_sealers_users_SealerId",
-                        column: x => x.SealerId,
-                        principalTable: "users",
-                        principalColumn: "UserId",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -87,10 +66,38 @@ namespace DreamTech.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "users",
+                columns: table => new
+                {
+                    UserId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserPassword = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SealerID = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_users", x => x.UserId);
+                    table.ForeignKey(
+                        name: "FK_users_sealers_SealerID",
+                        column: x => x.SealerID,
+                        principalTable: "sealers",
+                        principalColumn: "SealerId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_ProductSealer_SealerId",
                 table: "ProductSealer",
                 column: "SealerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_users_SealerID",
+                table: "users",
+                column: "SealerID",
+                unique: true);
         }
 
         /// <inheritdoc />
@@ -100,13 +107,13 @@ namespace DreamTech.Migrations
                 name: "ProductSealer");
 
             migrationBuilder.DropTable(
+                name: "users");
+
+            migrationBuilder.DropTable(
                 name: "products");
 
             migrationBuilder.DropTable(
                 name: "sealers");
-
-            migrationBuilder.DropTable(
-                name: "users");
         }
     }
 }
