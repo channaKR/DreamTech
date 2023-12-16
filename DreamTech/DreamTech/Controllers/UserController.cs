@@ -1,6 +1,8 @@
 ﻿
 using DreamTech.Data;
+using DreamTech.Interface;
 using DreamTech.Model;
+using DreamTech.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,13 +12,24 @@ namespace DreamTech.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly DataContext _context;
+        private readonly IUserRepository _userRepository;
 
-        public UserController(DataContext context)
+        public UserController(IUserRepository userRepository)
         {
-            _context = context;
+            _userRepository = userRepository;
         }
- 
+
+
+        [HttpGet]
+        [Route("GetUsers")]
+        public ICollection<User> GetUsers()
+        {
+            return _userRepository.GetUsers();
+        }
+
+
+
+
 
     }
 }
