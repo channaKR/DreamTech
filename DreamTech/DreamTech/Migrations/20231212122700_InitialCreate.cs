@@ -16,10 +16,10 @@ namespace DreamTech.Migrations
                 {
                     ProductID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProductDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProductCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Price = table.Column<double>(type: "float", nullable: true),
+                    ProductName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ProductDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ProductCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Price = table.Column<double>(type: "float", nullable: false),
                     SealerID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -33,9 +33,9 @@ namespace DreamTech.Migrations
                 {
                     SealerId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    SealerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SealerNic = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SealerCode = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    SealerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SealerNic = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SealerCode = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -72,9 +72,9 @@ namespace DreamTech.Migrations
                 {
                     UserId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserPassword = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserPassword = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SealerID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
