@@ -23,7 +23,7 @@ namespace DreamTech.Controllers
         [HttpGet]
         [Route("/Getusers")]
         [ProducesResponseType(200,Type =typeof(ICollection<User>))]
-        [ProducesResponseType(typeof(User), 400)]
+        [ProducesResponseType(typeof(ICollection<User>), 400)]
         public IActionResult GetUsers()
         {
             if (!ModelState.IsValid)
