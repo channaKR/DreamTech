@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DreamTech.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -21,14 +21,19 @@ namespace DreamTech.Controllers
 
 
         [HttpGet]
-        [Route("GetUsers")]
-        public ICollection<User> GetUsers()
+        [Route("/Getusers")]
+        [ProducesResponseType(200,Type =typeof(ICollection<User>))]
+        [ProducesResponseType(typeof(User), 400)]
+        public IActionResult GetUsers()
         {
-            return _userRepository.GetUsers();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            return Ok(_userRepository.GetUsers());
         }
 
-
-
+       
 
 
     }
