@@ -9,3 +9,4 @@ E:\Projects\Gift Shop\DreamTech\DesktopToyShop\DesktopToyShop\obj\Debug\DesktopT
 E:\Projects\Gift Shop\DreamTech\DesktopToyShop\DesktopToyShop\obj\Debug\DesktopToyShop.pdb
 E:\Projects\Gift Shop\DreamTech\DesktopToyShop\DesktopToyShop\obj\Debug\DesktopToyShop.LoginInterface.resources
 E:\Projects\Gift Shop\DreamTech\DesktopToyShop\DesktopToyShop\obj\Debug\DesktopToyShop.Component.MenuInterface.resources
+E:\Projects\Gift Shop\DreamTech\DesktopToyShop\DesktopToyShop\obj\Debug\DesktopToyShop.Component.Employee.resources

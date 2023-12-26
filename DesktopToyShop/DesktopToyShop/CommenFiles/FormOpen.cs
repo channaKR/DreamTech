@@ -17,6 +17,9 @@ namespace DesktopToyShop.CommenFiles
             OldForm.Close();
 
         }
-
+        public void FormOpenWithoutClose(Form NewForm)
+        {
+            NewForm.ShowDialog();
+        }
     }
 }

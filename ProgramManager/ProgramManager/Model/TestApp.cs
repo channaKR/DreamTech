@@ -1,6 +1,8 @@
 ﻿namespace ProgramManager.Model
 {
-    public class TestApp : IHost
+    public class TestApp
     {
+
+    
     }
 }

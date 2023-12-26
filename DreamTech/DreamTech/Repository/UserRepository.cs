@@ -14,6 +14,10 @@ namespace DreamTech.Repository
             _dbcontext = dbcontext;
         }
 
+        public User GetUser(int id)
+        {
+           return _dbcontext.users.Where(u => u.UserId == id).FirstOrDefault();
+        }
 
         public ICollection<User> GetUsers()
         {

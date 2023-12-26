@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="CommenFiles\EmailAdressValidation.cs" />
     <Compile Include="CommenFiles\FormOpen.cs" />
+    <Compile Include="Component\Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\Employee.Designer.cs">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Component\LoginInterface.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,27 @@
     <Compile Include="Model\Salary.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource\BranchEnum.cs" />
+    <Compile Include="Service\SalaryService.cs" />
+    <Compile Include="Service\SettingService.cs" />
+    <Compile Include="ToyshopDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToyshopDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ToyshopDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToyshopDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ToyshopDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToyshopDataSet2.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Component\Employee.resx">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Component\LoginInterface.resx">
       <DependentUpon>LoginInterface.cs</DependentUpon>
     </EmbeddedResource>
@@ -79,6 +106,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\DesktopToyShop.Resource.BranchEnum.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -88,6 +116,39 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ToyshopDataSet.xsc">
+      <DependentUpon>ToyshopDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ToyshopDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ToyshopDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ToyshopDataSet.xss">
+      <DependentUpon>ToyshopDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ToyshopDataSet1.xsc">
+      <DependentUpon>ToyshopDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ToyshopDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ToyshopDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ToyshopDataSet1.xss">
+      <DependentUpon>ToyshopDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ToyshopDataSet2.xsc">
+      <DependentUpon>ToyshopDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ToyshopDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ToyshopDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ToyshopDataSet2.xss">
+      <DependentUpon>ToyshopDataSet2.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

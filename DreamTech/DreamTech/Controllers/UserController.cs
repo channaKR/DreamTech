@@ -22,7 +22,7 @@ namespace DreamTech.Controllers
 
         [HttpGet]
         [Route("/Getusers")]
-        [ProducesResponseType(200,Type =typeof(ICollection<User>))]
+        [ProducesResponseType(200, Type = typeof(ICollection<User>))]
         [ProducesResponseType(typeof(ICollection<User>), 400)]
         public IActionResult GetUsers()
         {
@@ -33,7 +33,22 @@ namespace DreamTech.Controllers
             return Ok(_userRepository.GetUsers());
         }
 
-       
+        [HttpGet]
+        [ProducesResponseType(200, Type = typeof(User))]
+        [ProducesResponseType(404, Type = typeof(User))]
+        [Route("/SingleUser/{id}")]
+        public IActionResult SingleUser(int id)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return NotFound("User Not Found");
+            }
+            return Ok(_userRepository.GetUser(id));
+        
+        }
+
+
 
 
     }

@@ -1,4 +1,6 @@
 ﻿using DesktopToyShop.CommenFiles;
+using DesktopToyShop.Model;
+using DesktopToyShop.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,8 +15,9 @@ namespace DesktopToyShop.Component
 {
     public partial class MenuInterface : Form
     {
-        FormOpen formOpen = new FormOpen();
-
+       private FormOpen formOpen = new FormOpen();
+        private LoginInterface login = new LoginInterface();
+        private Employee employee = new Employee();
         public MenuInterface()
         {
             InitializeComponent();
@@ -22,10 +25,21 @@ namespace DesktopToyShop.Component
 
         private void Logout(object sender, EventArgs e)
         {
-           LoginInterface login = new LoginInterface();
+           
            formOpen.FormClose(this, login);
 
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Employee(object sender, EventArgs e)
+        {
+            
+            formOpen.FormOpenWithoutClose(employee);
         }
     }
 }

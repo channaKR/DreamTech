@@ -13,6 +13,7 @@ builder.Services.AddDbContext<DataContext>
         options => options.UseSqlServer(builder.Configuration
         .GetConnectionString("DefaultConnection"))
     ) ;
+
 builder.Services.AddScoped<IUserRepository,UserRepository>();
 builder.Services.AddTransient<Seed>();
 builder.Services.AddControllers();

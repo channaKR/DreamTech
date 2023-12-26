@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yCy5TmfiPH3X2U/ADv/22RXIyG0nexTXgL9nn8mYmz4RQ6rE4+wk6XmX5WIUzHxyIRo+GGAqEjx3g2kz9y/wqw==",
+  "dgSpecHash": "5tbb22d0sYI666ZNyfFNFbbWQm5aR5vVPtF6k+n8gi+b6c9j6S7e9qlSBnauSr8pn2oGg/CHdTkpFD+5DvNENw==",
   "success": true,
   "projectFilePath": "E:\\Projects\\Gift Shop\\DreamTech\\DreamTech\\DreamTech\\DreamTech.csproj",
   "expectedPackageFiles": [
@@ -70,7 +70,11 @@
     "C:\\Users\\Potato\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\Potato\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
     "C:\\Users\\Potato\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\Potato\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+    "C:\\Users\\Potato\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Potato\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\Potato\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\Potato\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\Potato\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512"
   ],
   "logs": []
 }
